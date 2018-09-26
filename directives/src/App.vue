@@ -1,13 +1,69 @@
 <template>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+       <div>
+    <label class="typo__label">Simple select / dropdown</label>
+    <multiselect v-model="value" :options="options" :multiple="true" :close-on-select="false" :clear-on-select="false" :hide-selected="true" :preserve-search="true" placeholder="Pick some" label="name" track-by="name" :preselect-first="true">
+      <template slot="tag" slot-scope="props"><span class="custom__tag"><span>{{ props.option.language }}</span><span class="custom__remove" @click="props.remove(props.option)">❌</span></span></template>
+    </multiselect>
+    <div>{{value}}</div>
+  </div>
+    </div>
+  </div>
+
+
+   <div class="product-response mt-4">
+      <h6 class="d-inline">Product: </h6>
+      <i class="fas fa-star text-warning" v-for="(n, index) in 3" :key="index"></i>
+      <i class="far fa-star text-warning" style="margin-left: -5px; padding-right: .5rem;" v-for="(n, index) in 2" :key="index"></i>
+    </div>
+
+
+</div>
+
 
 </template>
 
 <script>
-export default {};
+import Multiselect from "vue-multiselect";
+
+export default {
+  components: { Multiselect },
+  data() {
+    return {
+      value: null,
+      options: [
+        { name: "Vue.js", language: "JavaScript" },
+        { name: "Adonis", language: "JavaScript" },
+        { name: "Rails", language: "Ruby" },
+        { name: "Sinatra", language: "Ruby" },
+        { name: "Laravel", language: "PHP" },
+        { name: "Phoenix", language: "Elixir" }
+      ]
+    };
+  }
+};
 </script>
 
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+
 <style >
-.v-select {
+.custom__tag {
+  display: inline-block;
+  padding: 3px 12px;
+  background: #d2d7ff;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* .multiselect__option--highlight {
+  background: red;
+  outline: none;
+  color: #fff;
+} */
+/* .v-select {
   position: relative;
   box-sizing: border-box;
 }
@@ -68,7 +124,7 @@ export default {};
   flex-grow: 1;
   flex-wrap: wrap;
   padding: 0 2px;
-}
+} */
 </style>
 
 <!--  <div class="container mt-5">

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+// import Test from "./Test.vue";
 
 Vue.directive("highlight", {
   bind(el, binding, vnode) {
