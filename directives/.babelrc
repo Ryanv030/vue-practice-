@@ -1,5 +1,11 @@
 {
   "presets": [
-    ["es2015", { "modules": false }]
+    ["es2015", { "modules": false }],
+    [
+      "env",
+      {
+        "targets:": { "node": "10" } // change this to your node version
+      }
+    ]
   ]
 }
