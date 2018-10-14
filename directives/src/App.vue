@@ -10,20 +10,20 @@
 <script>
 import { mount } from "@vue/test-utils";
 import testing from "@vue/test-utils";
-import Counter from "./counter.js";
+import Counter from "./Counter.vue";
 
-console.log(testing);
+// console.log(testing);
 
-const wrapper = mount(Counter);
+// const wrapper = mount(Counter);
 
-const vms = wrapper.vm;
+// const vms = wrapper.vm;
 
-console.log(vms);
+// console.log(vms);
 
-console.log(wrapper);
+// console.log(wrapper);
 
-const element = document.getElementsByClassName("test");
-console.log(element);
+// const element = document.getElementsByClassName("test");
+// console.log(element);
 
 export default {
   components: {
