@@ -24,7 +24,7 @@ describe("Child", () => {
     }
   });
 
-  it("should render html correctly", () => {
+  it("should render html incorrectly", () => {
     expect(wrapper.html()).toContain("<h1>0</h1>");
   });
 });
